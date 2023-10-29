@@ -5,27 +5,23 @@
  Данная функция не должна возвращать значение.
  */
 
-'use strict';
-
-function receivingObject (object) {    //Создаю функцию, принимающую объект
-    for (let slider in object) {
-        if (object.hasOwnProperty(slider)) {    //Вывожу собственные свойства объекта
-            console.log(slider, object[slider]);
+function printObject (obj) {
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            console.log(prop, obj[prop]);
         }
     }
 }
 
-const threads = {    //Создаю объект (нитки для вязания)
-    name: "DROPS",
-    structure: 'wool',
-    threadLength: 150,
+// -------------------------------------------
+const userIvanov = {
+    name: 'Andrey',
+    surname: 'Ivanov',
+    age: 18,
+    position: 'developer'
 }
 
-const spokes = {    //Создаю объект (спицы для вязания)
-    name: "LYKKE",
-    materials: "tree",
-    view: 'removable',
-}
+printObject(userIvanov)
 
-receivingObject(threads);    //Выводим собственные свойства объекта - нитки
-receivingObject(spokes);    //Выводим собственные свойства объекта - спицы
+const myStr = 'test'
+printObject(myStr)
